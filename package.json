@@ -1,0 +1,102 @@
+{
+  "name": "react-native-payfort-applepay",
+  "version": "1.0.0",
+  "description": "React Native Turbo Native Module for PayFort Apple Pay integration with full parameter support",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "!lib/typescript/example",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepack": "bob build",
+    "release": "release-it",
+    "bootstrap": "yarn && cd example && yarn"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "payfort",
+    "apple-pay",
+    "payment",
+    "turbo-module",
+    "amazon-payment-services"
+  ],
+  "repository": "https://github.com/e3bmo3ty/react-native-payfort-applepay",
+  "author": "Ibrahim Sayed <ebrahim.3bmo3ty@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/e3bmo3ty/react-native-payfort-applepay/issues"
+  },
+  "homepage": "https://github.com/e3bmo3ty/react-native-payfort-applepay#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@react-native/eslint-config": "^0.72.2",
+    "@types/jest": "^28.1.2",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "0.70.0",
+    "eslint": "^8.4.1",
+    "jest": "^28.1.1",
+    "react": "18.2.0",
+    "react-native": "0.72.6",
+    "react-native-builder-bob": "^0.20.0",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "packageManager": "^yarn@1.22.15",
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "codegenConfig": {
+    "name": "RNPayfortApplePaySpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  }
+}
